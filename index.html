@@ -1,0 +1,214 @@
+import type React from "react"
+import Image from "next/image"
+import {
+  Music,
+  FishIcon as Swim,
+  Bike,
+  Mountain,
+  Sunset,
+  Building2,
+  Radio,
+  Guitar,
+  Music2,
+  StethoscopeIcon as Saxophone,
+} from "lucide-react"
+
+export default function Page() {
+  return (
+    <div className="flex min-h-screen bg-white">
+      {/* Left Sidebar */}
+      <nav className="hidden w-64 border-r border-[#e6e6eb] p-6 lg:block">
+        <div className="space-y-6">
+          <div>
+            <p className="text-sm font-medium text-[#8f8f8f]">Main</p>
+            <ul className="mt-2 space-y-2">
+              <li className="font-medium">AUSTIN</li>
+              <li>What to Do</li>
+              <li>Food</li>
+              <li>Music</li>
+              <li>Shop</li>
+              <li>Local Favorites</li>
+              <li>Must-Knows</li>
+              <li>Trips</li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-sm font-medium text-[#8f8f8f]">MORE</p>
+            <ul className="mt-2 space-y-2">
+              <li>General Hacks</li>
+              <li>Drink for Free</li>
+              <li>Secret Concerts</li>
+              <li>Around Austin</li>
+              <li>Tips & Secrets</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex-1 px-4 py-8 md:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          {/* Banner Image */}
+          <div className="mb-8 overflow-hidden rounded-2xl">
+            <Image
+              src="https://s3-alpha-sig.figma.com/img/0ba5/2793/a450f1b3fb8eda00047ac139c2d8c14b?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Zevhwmdldwsus~in4ygVgx5SmK5ptYsVsg2ZQWsiIFCsbv8LOaTvxq4zwVimVVdd1CIJ6kAw9EKWznS0VTBcJPN73dseYA60~1zm5bjGH7sl-glSDFGlVixmsA918siy6bIHGB~9zwk1LPehBzeemvv4o37svQak6Bolcw~jJS33B40aUsjApKdsdQamPK5yms834lE-4Jglhik-5ewwQErDpSJjcqWe78rORwCZJeihNIfCt0p49wbvnOW8XjMV7pur1AYiXWVIM3tW47jfmri9qKlYkuUm898qyk-RIES5lROeTqU5S5u~csUrbNAO7lLubQSHoKTKJOr~ggX8OA__"
+              alt="Colorful illustration of Austin landmarks and culture"
+              width={1000}
+              height={400}
+              className="w-full"
+            />
+          </div>
+
+          {/* Intro Text */}
+          <div className="mb-12 space-y-4">
+            <h1 className="text-xl font-semibold">Austin is weird—in the best way.</h1>
+            <p className="text-[#515151]">
+              It's hot and cool, busy and chill, techy and hippie, all at once. Cowboys, artists, and BBQ lovers mix
+              with musicians and startup folks.
+            </p>
+            <p className="text-[#515151]">So, what makes Austin awesome? What should you expect?</p>
+            <p>Let's jump in! 🤠🔥</p>
+          </div>
+
+          {/* What to Do Section */}
+          <div className="mb-16">
+            <h2 className="mb-6 flex items-center gap-2 text-xl font-semibold">
+              The Real Austin: <span className="rounded-full bg-[#ffca51] px-3 py-1">What to Do</span> (That's Actually
+              Cool)
+            </h2>
+
+            <div className="grid gap-4">
+              <ActivityCard
+                icon={<Swim className="h-8 w-8" />}
+                title="Swim"
+                description="Swim At Barton Springs – It's Freezing, But Jumping In Is A Rite Of Passage."
+              />
+              <ActivityCard
+                icon={<Bike className="h-8 w-8" />}
+                title="Kayak"
+                description="Kayak Or Paddleboard On Lady Bird Lake – Rent From Rowing Dock Or The Expedition School."
+              />
+              <ActivityCard
+                icon={<Mountain className="h-8 w-8" />}
+                title="Hike"
+                description="Hike The Greenbelt – Enter At Spyglass Or Twin Falls For The Best Spots."
+              />
+              <ActivityCard
+                icon={<Sunset className="h-8 w-8" />}
+                title="Sunset"
+                description="Sunset At Mount Bonnell Or Pennybacker Bridge – Romantic? Yes. Instagrammable? Also Yes."
+              />
+              <ActivityCard
+                icon={<Building2 className="h-8 w-8" />}
+                title="6th Street"
+                description="East 6th Street = Dirty 6th – If You Want Fun Bars, Avoid Dirty 6th Like The Plague. Go East."
+              />
+            </div>
+          </div>
+
+          {/* Live Music Section */}
+          <div>
+            <h2 className="mb-6 flex items-center gap-2 text-xl font-semibold">
+              Where to Hear <span className="rounded-full bg-[#ffca51] px-3 py-1">Live Music</span> (Avoid Tourist Traps
+              & Thank Us Later)
+            </h2>
+
+            <div className="grid gap-4">
+              <VenueCard
+                icon={<Radio className="h-8 w-8" />}
+                title="Blues, Rock Music"
+                venue="The Continental Club"
+                description="The Most Austin-Y Austin Place For Blues, Rock, And Old-School Cool."
+              />
+              <VenueCard
+                icon={<Music className="h-8 w-8" />}
+                title="Rock"
+                venue="Mohawk"
+                description="Indie Bands, Rooftop Views, Loud In The Best Way."
+              />
+              <VenueCard
+                icon={<Guitar className="h-8 w-8" />}
+                title="Acoustics Music"
+                venue="ACL Live At The Moody Theater"
+                description="Where Big Names Play, Best Acoustics In Town."
+              />
+              <VenueCard
+                icon={<Music2 className="h-8 w-8" />}
+                title="Country Music"
+                venue="The White Horse"
+                description="Honky Tonk, Cheap Drinks, Two-Stepping, Rowdy Crowd."
+              />
+              <VenueCard
+                icon={<Saxophone className="h-8 w-8" />}
+                title="Blues"
+                venue="Antone's"
+                description="If You Love Blues, This Is A Non-Negotiable Stop."
+              />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Right Sidebar */}
+      <aside className="hidden w-72 border-l border-[#e6e6eb] p-6 xl:block">
+        <div className="space-y-6">
+          <h3 className="text-lg font-semibold">PHOTO?</h3>
+          <div className="space-y-4">
+            <p>
+              Hey y'all, we're Anton & Sofia – your totally unqualified, self-appointed guides to the best city in
+              Texas.
+            </p>
+            <p>
+              If you're reading this, you're likely stranded in Austin for a few wild days or found yourself at SXSW
+              with no plan.
+            </p>
+            <p>Good news: We got you.</p>
+            <p>Let's get weird. 😎🤠</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  )
+}
+
+function ActivityCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+  // Split the description to separate the location from the rest
+  const [location, ...rest] = description.split(" – ")
+
+  return (
+    <div className="flex items-start gap-6 rounded-[24px] border border-[#e6e6eb] bg-white p-6 transition-colors hover:bg-gray-50">
+      <div className="text-[#515151]">{icon}</div>
+      <div className="space-y-1">
+        <h3 className="text-[20px] font-bold text-black">{title}</h3>
+        <p className="text-[#515151]">
+          <span className="font-medium">{location}</span>
+          {rest.length > 0 && (
+            <span>
+              {" – "}
+              {rest.join("")}
+            </span>
+          )}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function VenueCard({
+  icon,
+  title,
+  venue,
+  description,
+}: { icon: React.ReactNode; title: string; venue: string; description: string }) {
+  return (
+    <div className="flex items-start gap-4 rounded-lg border border-[#e6e6eb] p-4 transition-colors hover:bg-gray-50">
+      <div className="text-[#515151]">{icon}</div>
+      <div>
+        <h3 className="text-sm font-medium text-[#8f8f8f]">{title}</h3>
+        <p className="font-semibold">{venue}</p>
+        <p className="text-[#515151]">{description}</p>
+      </div>
+    </div>
+  )
+}
+
